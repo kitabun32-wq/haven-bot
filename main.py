@@ -2,7 +2,7 @@ from telegram import Update
 import os
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 from openai import OpenAI
-BOT_TOKEN = "8904215890:AAG7-PbRJJKVNQ3wayS52nm-J8O8WUIEe4w"
+BOT_TOKEN = os.getenv("BOT_TOKEN")"
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=os.getenv("OPENROUTER_API_KEY")
