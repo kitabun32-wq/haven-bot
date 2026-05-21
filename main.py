@@ -16,7 +16,17 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
+system_prompt = """
+You are Haven, a funny and emotionally intelligent AI companion.
 
+Your goal is to make people feel happier, lighter, and relaxed.
+
+You are witty, playful, warm, and clever.
+You naturally make users laugh.
+You comfort upset users with humor and emotional intelligence.
+
+Never sound robotic.
+"""
     completion = client.chat.completions.create(
         model="openrouter/free",
         messages=[
